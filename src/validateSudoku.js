@@ -46,4 +46,6 @@ function isValidSudoku(board) {
 	// Escriba su código aquí
 }
 
+isValidSudoku()
+
 module.exports = isValidSudoku;
