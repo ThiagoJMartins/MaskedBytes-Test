@@ -7,6 +7,7 @@
  * - Cada fila contiene los números del 1 al 9 sin repetir.
  * - Cada columna contiene los números del 1 al 9 sin repetir.
  * - Cada uno de los 9 subcuadrantes de 3x3 contiene los números del 1 al 9 sin repetir.
+ * - El tablero de Sudoku no está vacío.
  *
  * Nota:
  * - El tablero de Sudoku puede tener algunos espacios vacíos representados por el carácter '.'.
@@ -43,9 +44,29 @@
  */
 
 function isValidSudoku(board) {
-	// Escriba su código aquí
-}
+	// Escriba su ejercicio aquí
+	const rows = new Array(9).fill().map(() => new Set());
+	const cols = new Array(9).fill().map(() => new Set());
+	const boxes = new Array(9).fill().map(() => new Set());
 
-isValidSudoku()
+	for (let i = 0; i < 9; i++) {
+		for (let j = 0; j < 9; j++) {
+			const num = board[i][j];
+			if (num === ".") continue;
+
+			const boxIndex = Math.floor(i / 3) * 3 + Math.floor(j / 3);
+
+			if (rows[i].has(num) || cols[j].has(num) || boxes[boxIndex].has(num)) {
+				return false;
+			}
+
+			rows[i].add(num);
+			cols[j].add(num);
+			boxes[boxIndex].add(num);
+		}
+	}
+
+	return true;
+}
 
 module.exports = isValidSudoku;
