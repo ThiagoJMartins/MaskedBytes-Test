@@ -1,4 +1,4 @@
-# Prueba Técnica para Pasante de JavaScript
+# Prueba Técnica
 
 Este repositorio contiene dos ejercicios de lógica en JavaScript para evaluar tus habilidades de programación.
 
