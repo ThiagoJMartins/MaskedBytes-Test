@@ -23,4 +23,6 @@ function fizzBuzz() {
   // Escriba su ejercicio aquí
 }
 
+fizzBuzz()
+
 module.exports = fizzBuzz;
